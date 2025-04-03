@@ -1,0 +1,13 @@
+[project]
+name = "tryout-webrtc-py-broadcast-vfr"
+version = "0.1.0"
+description = "WebRTC Variable Frame Rate Streaming"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.11.16",
+    "aiortc>=1.11.0",
+    "av>=14.2.0",
+    "numpy>=2.2.4",
+    "opencv-python>=4.11.0.86",
+]

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebRTC Variable Frame Rate Client</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+        }
+        video {
+            background: black;
+            border: 1px solid gray;
+            max-width: 640px; /* Match server resolution */
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 150px;
+            overflow-y: auto;
+            width: 100%;
+            max-width: 620px; /* Match video width */
+            box-sizing: border-box;
+        }
+        .controls {
+            margin-bottom: 20px;
+        }
+        .logs {
+            width: 100%;
+            max-width: 640px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WebRTC Variable Frame Rate Client</h1>
+
+    <div class="controls">
+        <button id="start" onclick="start()">Start Connection</button>
+        <button id="request-frame" onclick="requestFrame()" disabled>Request Frame</button>
+        <button id="stop" onclick="stop()" disabled>Disconnect</button>
+    </div>
+
+    <video id="video" autoplay playsinline></video>
+
+    <div class="logs">
+        <h3>Logs:</h3>
+        <pre id="logs"></pre>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
